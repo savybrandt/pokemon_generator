@@ -1,8 +1,8 @@
 # **Random Pokemon Generator**
 
 **Technical Requirements:**
-- Must use React
-- Must interact with graphql-pokemon API via graphQL
+- Must use `React`
+- Must interact with `graphql-pokemon` API via `graphQL` and `urql`
 
 **Time Limit:**
 30 mins
