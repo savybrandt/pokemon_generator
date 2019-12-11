@@ -3,6 +3,7 @@
 **Technical Requirements:**
 - Must use `React`
 - Must interact with `graphql-pokemon` API via `graphQL` and `urql`
+- urql docs: https://formidable.com/open-source/urql/docs/
 
 **Time Limit:**
 30 mins
