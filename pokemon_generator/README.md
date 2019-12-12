@@ -11,12 +11,10 @@
 - Build a single-page React app which displays a random Pokemon at the click of a button utilizing a provided graphQL API
 
 **AC:**
-Pokemon Display: 
+Pokemon Display:
 - Name
 - Photo
 - Classification
-- Resistant
-- Weaknesses
 Button Behavior
 - Returns 1 random pokemon per click
 

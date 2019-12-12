@@ -1,13 +1,15 @@
 import React from 'react';
+import { useQuery } from 'urql';
+import { getPokemon } from 'api/getPokemon';
 
 const PokemonGenerator = () => (
   <div className="App">
-    <header className="App-header">
+    <div className="App-header">
       <h1>🤔</h1>
       <p>
         Hmm... Needs more Pokemon
       </p>
-    </header>
+    </div>
   </div>
 )
 
