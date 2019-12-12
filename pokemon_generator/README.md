@@ -15,8 +15,10 @@ Pokemon Display:
 - Name
 - Photo
 - Classification
+
 Button Behavior
 - Returns 1 random pokemon per click
 
-**API:**
-https://graphql-pokemon.now.sh/
+**Docs:**
+- API https://graphql-pokemon.now.sh/
+- urql https://formidable.com/open-source/urql/docs/ (everything you need is on this page!)
