@@ -5,18 +5,20 @@
 - Must interact with `graphql-pokemon` API via `graphQL` and `urql`
 
 **Time Limit:**
+
 30 mins
 
 **Prompt:**
 - Build a single-page React app which displays a random Pokemon at the click of a button utilizing a provided graphQL API
 
 **AC:**
+
 Pokemon Display:
 - Name
 - Photo
 - Classification
 
-Button Behavior
+Button Behavior:
 - Returns 1 random pokemon per click
 
 **Docs:**
