@@ -1,7 +1,5 @@
-import React from 'react';
-
 const getPokemon = `
-  query GetPokemon() {
+  query GetPokemon {
   }
 `;
 

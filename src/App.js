@@ -6,7 +6,11 @@ import './App.css';
 
 const App = () => (
   <QueryProvider value={client}>
-    <PokemonGenerator />
+    <div className="App">
+      <div className="App-header">
+        <PokemonGenerator />
+      </div>
+    </div>
   </QueryProvider>
 );
 

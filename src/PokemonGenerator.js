@@ -1,16 +1,17 @@
-import React from 'react';
-import { useQuery } from 'urql';
-import { getPokemon } from 'api/getPokemon';
+import React, { Fragment } from 'react';
+import {
+  Query, // component
+  useQuery // hook
+} from 'urql';
+import getPokemon from './api/getPokemon';
 
 const PokemonGenerator = () => (
-  <div className="App">
-    <div className="App-header">
-      <h1>🤔</h1>
-      <p>
-        Hmm... Needs more Pokemon
-      </p>
-    </div>
-  </div>
+  <Fragment>
+    <h1>🤔</h1>
+    <p>
+      Hmm... Needs more Pokemon
+    </p>
+  </Fragment>
 )
 
 export default PokemonGenerator;
