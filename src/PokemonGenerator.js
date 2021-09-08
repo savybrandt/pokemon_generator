@@ -1,13 +1,18 @@
 import React from 'react';
-import getPokemon from './api/getPokemon';
+import { usePreloadedQuery } from 'react-relay/hooks';
+import { PokemonQuery } from './api';
 
-const PokemonGenerator = () => (
-  <>
-    <h1>🤔</h1>
-    <p>
-      Hmm... Needs more Pokemon
-    </p>
-  </>
-)
+function PokemonGenerator ({ preloadedQuery }) {
+  const data = usePreloadedQuery(PokemonQuery, preloadedQuery);
+  const pokemons = data ? data.pokemons : null;
+  const pokemon = pokemons ? pokemons[0] : {};
+  
+  return (
+    <>
+      <h1>{pokemon.name}</h1>
+      <img alt={pokemon.name} src={pokemon.image}/>
+    </>
+  )
+}
 
 export default PokemonGenerator;

@@ -3,4 +3,4 @@
 Playing with Relay
 
 **Docs:**
-- API https://graphql-pokemon.now.sh/
+- API https://graphql-pokemon2.vercel.app
