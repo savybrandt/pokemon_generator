@@ -24,7 +24,7 @@ export type PokemonQuery = {|
 
 /*
 query PokemonQuery {
-  pokemons(first: 1) {
+  pokemons(first: 151) {
     name
     image
     id
@@ -37,7 +37,7 @@ var v0 = [
   {
     "kind": "Literal",
     "name": "first",
-    "value": 1
+    "value": 151
   }
 ],
 v1 = {
@@ -72,7 +72,7 @@ return {
           (v1/*: any*/),
           (v2/*: any*/)
         ],
-        "storageKey": "pokemons(first:1)"
+        "storageKey": "pokemons(first:151)"
       }
     ],
     "type": "Query",
@@ -102,21 +102,21 @@ return {
             "storageKey": null
           }
         ],
-        "storageKey": "pokemons(first:1)"
+        "storageKey": "pokemons(first:151)"
       }
     ]
   },
   "params": {
-    "cacheID": "3f406f6fd94a926f53e758810f814a60",
+    "cacheID": "600f781c7c492531f940e548cc69fecc",
     "id": null,
     "metadata": {},
     "name": "PokemonQuery",
     "operationKind": "query",
-    "text": "query PokemonQuery {\n  pokemons(first: 1) {\n    name\n    image\n    id\n  }\n}\n"
+    "text": "query PokemonQuery {\n  pokemons(first: 151) {\n    name\n    image\n    id\n  }\n}\n"
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '8326dfc7a89b7badb2fb578343dc4464';
+(node/*: any*/).hash = '348a3058f8146aa7cd2631867d5cd785';
 
 module.exports = node;
