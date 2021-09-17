@@ -3,22 +3,21 @@ import {
   RelayEnvironmentProvider,
   loadQuery,
 } from 'react-relay/hooks';
-import PokemonGenerator from './PokemonGenerator.js';
+import { PokemonGenerator } from './components/PokemonGenerator/';
 import { RelayEnvironment, PokemonQuery } from './api'
 import './App.css';
 
-const preloadedQuery = loadQuery(RelayEnvironment, PokemonQuery);
-
-function App(props) {
+function App() {
+  const preloadedQuery = loadQuery(RelayEnvironment, PokemonQuery);
   return (
     <RelayEnvironmentProvider environment={RelayEnvironment}>
-      <Suspense fallback={'Loading...'}>
-        <div className="App">
-          <div className="App-header">
+      <div className="App">
+        <div className="App-header">
+          <Suspense fallback="App Loading...">
             <PokemonGenerator preloadedQuery={preloadedQuery} />
-          </div>
+          </Suspense>
         </div>
-      </Suspense>
+      </div>
     </RelayEnvironmentProvider>
   );
 }

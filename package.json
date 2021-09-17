@@ -14,9 +14,6 @@
     "build": "yarn run relay && react-scripts build",
     "relay": "yarn run relay-compiler --schema schema.graphql --src ./src/ --watchman false $@"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",

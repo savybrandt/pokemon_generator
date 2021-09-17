@@ -1,5 +1,4 @@
-
-import RelayEnvironment from './RelayEnvironment'
 import { PokemonQuery } from './PokemonQuery'
+import RelayEnvironment from './RelayEnvironment'
 
-export {RelayEnvironment, PokemonQuery}
+export { RelayEnvironment, PokemonQuery };

@@ -8,11 +8,12 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
+type PokemonImage_pokemon$ref = any;
+type PokemonStats_pokemon$ref = any;
 export type PokemonQueryVariables = {||};
 export type PokemonQueryResponse = {|
   +pokemons: ?$ReadOnlyArray<?{|
-    +name: ?string,
-    +image: ?string,
+    +$fragmentRefs: PokemonImage_pokemon$ref & PokemonStats_pokemon$ref
   |}>
 |};
 export type PokemonQuery = {|
@@ -25,10 +26,29 @@ export type PokemonQuery = {|
 /*
 query PokemonQuery {
   pokemons(first: 151) {
-    name
-    image
+    ...PokemonImage_pokemon
+    ...PokemonStats_pokemon
     id
   }
+}
+
+fragment PokemonImage_pokemon on Pokemon {
+  name
+  image
+}
+
+fragment PokemonStats_pokemon on Pokemon {
+  name
+  weight {
+    minimum
+    maximum
+  }
+  height {
+    minimum
+    maximum
+  }
+  classification
+  maxHP
 }
 */
 
@@ -40,20 +60,22 @@ var v0 = [
     "value": 151
   }
 ],
-v1 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "name",
-  "storageKey": null
-},
-v2 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "image",
-  "storageKey": null
-};
+v1 = [
+  {
+    "alias": null,
+    "args": null,
+    "kind": "ScalarField",
+    "name": "minimum",
+    "storageKey": null
+  },
+  {
+    "alias": null,
+    "args": null,
+    "kind": "ScalarField",
+    "name": "maximum",
+    "storageKey": null
+  }
+];
 return {
   "fragment": {
     "argumentDefinitions": [],
@@ -69,8 +91,16 @@ return {
         "name": "pokemons",
         "plural": true,
         "selections": [
-          (v1/*: any*/),
-          (v2/*: any*/)
+          {
+            "args": null,
+            "kind": "FragmentSpread",
+            "name": "PokemonImage_pokemon"
+          },
+          {
+            "args": null,
+            "kind": "FragmentSpread",
+            "name": "PokemonStats_pokemon"
+          }
         ],
         "storageKey": "pokemons(first:151)"
       }
@@ -92,8 +122,54 @@ return {
         "name": "pokemons",
         "plural": true,
         "selections": [
-          (v1/*: any*/),
-          (v2/*: any*/),
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "name",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "image",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "PokemonDimension",
+            "kind": "LinkedField",
+            "name": "weight",
+            "plural": false,
+            "selections": (v1/*: any*/),
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "PokemonDimension",
+            "kind": "LinkedField",
+            "name": "height",
+            "plural": false,
+            "selections": (v1/*: any*/),
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "classification",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "maxHP",
+            "storageKey": null
+          },
           {
             "alias": null,
             "args": null,
@@ -107,16 +183,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "600f781c7c492531f940e548cc69fecc",
+    "cacheID": "fe2e29c9b89b630a4d6d416a993adac6",
     "id": null,
     "metadata": {},
     "name": "PokemonQuery",
     "operationKind": "query",
-    "text": "query PokemonQuery {\n  pokemons(first: 151) {\n    name\n    image\n    id\n  }\n}\n"
+    "text": "query PokemonQuery {\n  pokemons(first: 151) {\n    ...PokemonImage_pokemon\n    ...PokemonStats_pokemon\n    id\n  }\n}\n\nfragment PokemonImage_pokemon on Pokemon {\n  name\n  image\n}\n\nfragment PokemonStats_pokemon on Pokemon {\n  name\n  weight {\n    minimum\n    maximum\n  }\n  height {\n    minimum\n    maximum\n  }\n  classification\n  maxHP\n}\n"
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '348a3058f8146aa7cd2631867d5cd785';
+(node/*: any*/).hash = 'a3d3ee80dd594e52e7f292677534d52b';
 
 module.exports = node;
